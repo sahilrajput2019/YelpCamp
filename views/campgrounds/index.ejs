@@ -1,0 +1,31 @@
+<%- include('../partials/header') %>
+
+<div class="container">
+	
+	<header class="jumbotron">
+	  <div class="container">
+		<h1>This is Campgrounds Page!</h1>
+		<p>View our hand-picked Campgrounds from all over the World</p>
+		<a class="btn btn-primary btn-large" href="/campgrounds/new">Add New Campground</a>
+       </div>
+	</header>
+	
+	<div class="row text-center" style="display: flex; flex-wrap:wrap;">
+		<% for(var i=0; i<campground.length; i++){ %>
+			<div class="col-lg-3 col-md-4 col-sm-6">
+
+				<div class="card">
+					<img class="card-img-top" src = " <%= campground[i].image %> ">
+					<div class="card-body">
+					<h5 class="card-title"><%= campground[i].name %></h5>
+					<a href="/campgrounds/<%= campground[i]._id %>" class="btn btn-primary">More Info</a>
+					</div>
+				</div>
+
+			</div>
+		<% } %>
+    </div>
+
+</div>
+
+<%- include('../partials/footer') %>
